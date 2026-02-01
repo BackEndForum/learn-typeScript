@@ -1,11 +1,4 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-let all;
-all = "name";
-all = true;
-all = 41;
-let myArray = ["html", "css", "js", null, undefined, "test"];
-for (let i = 0; i < myArray.length; i++) {
-    console.log(myArray[i]?.repeat(10));
-}
+let myArray = ["html", "css", "js", 42, true, [1, 3, 5], ["a", "b", "c"], ["ali", "vali", 1456, false], { name: "ali", age: 25 }, { name: "zahra", age: 30, isMarried: true }];
 //# sourceMappingURL=test.js.map

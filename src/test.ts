@@ -1,27 +1,12 @@
-let all: string | number | boolean;
-all = "name";
-all = true;
-all = 41;
-let myArray: string[] = ["html", "css", "js", null, undefined, "test"];
-
-for (let i = 0; i < myArray.length; i++) {
-  console.log(myArray[i]?.repeat(10));
-}
-
+let myArray: (string | number | boolean | number[] | string[] | (string | number | boolean)[]| {name: string; age: number} | {name: string; age: number; isMarried: boolean})[] = ["html", "css", "js", 42, true, [1, 3, 5], ["a", "b", "c"], ["ali", "vali", 1456, false], {name: "ali", age: 25}, {name: "zahra", age: 30, isMarried: true}];
 /*
-تسمى هذه العلامة في البرمجة Optional Chaining (التسلسل الاختياري). إليك التفسير ببساطة:
-
-ما هي وظيفتها؟
-تخيل أن المصفوفة myArray تحتوي على بعض القيم "الفارغة" أو غير المعرفة (مثل null أو undefined).
-
-بدون ?: إذا حاول الكود تنفيذ .repeat(10) على قيمة غير موجودة، سيتوقف البرنامج فوراً ويظهر لك خطأ شهير: TypeError: Cannot read property 'repeat' of undefined.
-
-بوجود ?: الكود يقول للمتصفح: "تحقق أولاً، إذا كان العنصر myArray[i] موجوداً فعلاً، فقم بتكراره. أما إذا كان فارغاً، فتوقف عند هذا الحد ولا تطلق خطأً، بل اجعل النتيجة undefined ببساطة".
-مثال عملي للتوضيحلو فرضنا أن المصفوفة لديك تبدو هكذا:let myArray = ["أهلاً", null, "مرحباً"];الكود المستخدمالنتيجة عند الوصول للعنصر الثاني (null)myArray[i].repeat(10)تحطم البرنامج (Error) ❌myArray[i]?.repeat(10)يكمل البرنامج العمل ويعطي undefined لهذا العنصر ✅
-
-أهلاً بك! هذا سؤال ذكي جداً، واستخدام علامة الاستفهام ? هنا ليس مجرد زينة، بل هو "منقذ حياة" للكود الخاص بك من الانهيار.تسمى هذه العلامة في البرمجة Optional Chaining (التسلسل الاختياري). إليك التفسير ببساطة:ما هي وظيفتها؟تخيل أن المصفوفة myArray تحتوي على بعض القيم "الفارغة" أو غير المعرفة (مثل null أو undefined).بدون ?: إذا حاول الكود تنفيذ .repeat(10) على قيمة غير موجودة، سيتوقف البرنامج فوراً ويظهر لك خطأ شهير: TypeError: Cannot read property 'repeat' of undefined.بوجود ?: الكود يقول للمتصفح: "تحقق أولاً، إذا كان العنصر myArray[i] موجوداً فعلاً، فقم بتكراره. أما إذا كان فارغاً، فتوقف عند هذا الحد ولا تطلق خطأً، بل اجعل النتيجة undefined ببساطة".مثال عملي للتوضيحلو فرضنا أن المصفوفة لديك تبدو هكذا:let myArray = ["أهلاً", null, "مرحباً"];الكود المستخدمالنتيجة عند الوصول للعنصر الثاني (null)myArray[i].repeat(10)تحطم البرنامج (Error) ❌myArray[i]?.repeat(10)يكمل البرنامج العمل ويعطي undefined لهذا العنصر ✅باختصار:نحن نحتاج ? كنوع من الحماية (Safety Check) لضمان أن البرنامج لن يتوقف عن العمل إذا صادف بيانات ناقصة أو غير متوقعة داخل المصفوفة.
-
-
-باختصار:
-نحن نحتاج ? كنوع من الحماية (Safety Check) لضمان أن البرنامج لن يتوقف عن العمل إذا صادف بيانات ناقصة أو غير متوقعة داخل المصفوفة.
+let myArray: (string | number | boolean | (string | number | boolean)[] | {
+  name: string;
+  age: number;
+  isMarried?: never;
+} | {
+  name: string;
+  age: number;
+  isMarried: boolean;
+})[]
 */
