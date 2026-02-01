@@ -1,12 +1,26 @@
-let myArray: (string | number | boolean | number[] | string[] | (string | number | boolean)[]| {name: string; age: number} | {name: string; age: number; isMarried: boolean})[] = ["html", "css", "js", 42, true, [1, 3, 5], ["a", "b", "c"], ["ali", "vali", 1456, false], {name: "ali", age: 25}, {name: "zahra", age: 30, isMarried: true}];
 /*
-let myArray: (string | number | boolean | (string | number | boolean)[] | {
-  name: string;
-  age: number;
-  isMarried?: never;
-} | {
-  name: string;
-  age: number;
-  isMarried: boolean;
-})[]
+  type annotations with functions
+
+  - noImplicitAny
+  --- raise error on expressions and declarations with an implied 'any' type
+
+  - noImplicitReturns
+  --- will check all code paths in a function to ensure they return a value
+
+  - noUnusedLocals
+  --- report Errors on unused Local variables
+
+  - noUnusedParameters
+  --- report Errors on unused parameters in functions
 */
+
+let showMessage: boolean = true;
+
+function getSalary(name:string, id:number, salary:number) : boolean | string {
+  let x = "test";
+  if (showMessage) {
+    return `your id is ${id}, hello ${name}, your salary is ${salary}`;
+  }
+  return "No salary available";
+}
+console.log(getSalary("Alice", 101, 50000));

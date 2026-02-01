@@ -1,4 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-let myArray = ["html", "css", "js", 42, true, [1, 3, 5], ["a", "b", "c"], ["ali", "vali", 1456, false], { name: "ali", age: 25 }, { name: "zahra", age: 30, isMarried: true }];
+let showMessage = true;
+function getSalary(name, id, salary) {
+    let x = "test";
+    if (showMessage) {
+        return `your id is ${id}, hello ${name}, your salary is ${salary}`;
+    }
+    return "No salary available";
+}
+console.log(getSalary("Alice", 101, 50000));
 //# sourceMappingURL=test.js.map
