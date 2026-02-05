@@ -1,19 +1,17 @@
 /*
-  Function
-  - Type Annotations With Anonymous And Arrow Function
+  Data type
+  - type Alias
 */
 
-const count = function(number1:number, number2:number) :number {
-  return number1 + number2;
-}
+type bo = boolean;
+type txt = string | Number;
+let x: bo = true
+x = false
+// x = 2; // type 'number' is not assignable to type 'boolean'
 
-const arowFun = (x:number, y:number) :number => {return x + y};
+let y: txt = "mustafa";
+y = 10;
+y = +true;
 
-const arowFunTwo = (x: number, y: number) : number => x + y;
-
-console.log(count(3, 7));
-console.log(arowFun(8, 10));
-console.log(arowFunTwo(9, 7));
-
-
-
+console.log(x);
+console.log(y);
