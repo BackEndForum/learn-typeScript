@@ -1,26 +1,17 @@
 /*
-  type annotations with functions
-
-  - noImplicitAny
-  --- raise error on expressions and declarations with an implied 'any' type
-
-  - noImplicitReturns
-  --- will check all code paths in a function to ensure they return a value
-
-  - noUnusedLocals
-  --- report Errors on unused Local variables
-
-  - noUnusedParameters
-  --- report Errors on unused parameters in functions
+  Function
+  - Rest Parameter
+  - What About Float => All Is Under Type Number
 */
 
-let showMessage: boolean = true;
-
-function getSalary(name:string, id:number, salary:number) : boolean | string {
-  let x = "test";
-  if (showMessage) {
-    return `your id is ${id}, hello ${name}, your salary is ${salary}`;
-  }
-  return "No salary available";
+function cont(...nub:number[]) :number {
+  let x = 0;
+  nub.map((y) => x+=y);
+  // nub.forEach((y) => x+=y);
+  // for (let i = 0; i < nub.length; i++) {
+  //   x += nub[i]!; // Object is possibly 'undefined'.
+  // }
+  return x;
 }
-console.log(getSalary("Alice", 101, 50000));
+
+console.log(cont(1, 3, 4, 5, 2, +true, 1.50, 3.63)); // 21.13

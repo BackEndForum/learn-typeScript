@@ -1,12 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-let showMessage = true;
-function getSalary(name, id, salary) {
-    let x = "test";
-    if (showMessage) {
-        return `your id is ${id}, hello ${name}, your salary is ${salary}`;
-    }
-    return "No salary available";
+function cont(...nub) {
+    let x = 0;
+    nub.map((y) => x += y);
+    return x;
 }
-console.log(getSalary("Alice", 101, 50000));
+console.log(cont(1, 3, 4, 5, 2, +true, 1.50, 3.63));
 //# sourceMappingURL=test.js.map
