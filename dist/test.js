@@ -1,9 +1,11 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-function cont(...nub) {
-    let x = 0;
-    nub.map((y) => x += y);
-    return x;
-}
-console.log(cont(1, 3, 4, 5, 2, +true, 1.50, 3.63));
+const count = function (number1, number2) {
+    return number1 + number2;
+};
+const arowFun = (x, y) => { return x + y; };
+const arowFunTwo = (x, y) => x + y;
+console.log(count(3, 7));
+console.log(arowFun(8, 10));
+console.log(arowFunTwo(9, 7));
 //# sourceMappingURL=test.js.map

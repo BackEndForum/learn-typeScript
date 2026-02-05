@@ -1,17 +1,19 @@
 /*
   Function
-  - Rest Parameter
-  - What About Float => All Is Under Type Number
+  - Type Annotations With Anonymous And Arrow Function
 */
 
-function cont(...nub:number[]) :number {
-  let x = 0;
-  nub.map((y) => x+=y);
-  // nub.forEach((y) => x+=y);
-  // for (let i = 0; i < nub.length; i++) {
-  //   x += nub[i]!; // Object is possibly 'undefined'.
-  // }
-  return x;
+const count = function(number1:number, number2:number) :number {
+  return number1 + number2;
 }
 
-console.log(cont(1, 3, 4, 5, 2, +true, 1.50, 3.63)); // 21.13
+const arowFun = (x:number, y:number) :number => {return x + y};
+
+const arowFunTwo = (x: number, y: number) : number => x + y;
+
+console.log(count(3, 7));
+console.log(arowFun(8, 10));
+console.log(arowFunTwo(9, 7));
+
+
+
