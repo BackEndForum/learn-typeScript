@@ -1,17 +1,28 @@
 /*
   Data type
-  - type Alias
+  - Advanced type Alias
 */
 
-type bo = boolean;
-type txt = string | Number;
-let x: bo = true
-x = false
-// x = 2; // type 'number' is not assignable to type 'boolean'
+type Btns = {
+  One: String,
+  Two: String,
+  Thr?: String,
+};
 
-let y: txt = "mustafa";
-y = 10;
-y = +true;
+type x = Btns & {
+  yx?: Number,
+};
 
-console.log(x);
-console.log(y);
+const sayHello = function(lis: x) : String {
+  return `the fist is ${lis.One}, and the second is ${lis.Two}, the third is ${lis.Thr = '40'}, and in the end is ${lis.yx || "Last"}`;
+};
+
+const sayWellome = function(show: Btns) : void {
+  console.log(`hello ${show.One}`);
+  console.log(`welcome ${show.Two}`);
+  console.log(`yello ${show.Thr || "UN"}`);
+  
+}
+
+console.log(sayHello({One: "Mustafa", Two: "Ali", Thr: 'test', yx: +true }));
+sayWellome({One: "Omar", Two: "Noor"})
