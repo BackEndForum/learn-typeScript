@@ -1,24 +1,22 @@
 /*
   Data type
-  - Literal types
+  - Tuple
+  --- is another sort of array type
+  --- we knows exactly how many it contains
+  --- we knows which types it contains at specific positions
 */
 
-type result = 1 | -1 | 0;
+let artical: [number , String, Boolean] = [101, "Main Title", true];
 
-const compile = function (num1: Number, num2: Number) : result {
-  if (num1 === num2) {
-    return 1;
-  } else if (num1 > num2) {
-    return 0;
-  } else {
-    return -1;
-  }
-}
+// artical = [202, "Title one", false, ali]
+// artical.push("test");
 
-// const test1: result = 3;
-// const test2: result = +true;
-const test3: result = 1;
+const [id, title, status] = artical;
 
-console.log(compile(20, 30));
-console.log(test3);
+console.log(artical);
+
+console.log(id);
+console.log(title);
+console.log(status);
+
 

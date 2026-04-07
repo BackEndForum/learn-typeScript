@@ -1,17 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const compile = function (num1, num2) {
-    if (num1 === num2) {
-        return 1;
-    }
-    else if (num1 > num2) {
-        return 0;
-    }
-    else {
-        return -1;
-    }
-};
-const test = 1;
-console.log(compile(20, 30));
-console.log(test);
+let artical = [101, "Main Title", true];
+const [id, title, status] = artical;
+console.log(artical);
+console.log(id);
+console.log(title);
+console.log(status);
 //# sourceMappingURL=test.js.map
