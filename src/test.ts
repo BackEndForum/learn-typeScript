@@ -1,28 +1,24 @@
 /*
   Data type
-  - Advanced type Alias
+  - Literal types
 */
 
-type Btns = {
-  One: String,
-  Two: String,
-  Thr?: String,
-};
+type result = 1 | -1 | 0;
 
-type x = Btns & {
-  yx?: Number,
-};
-
-const sayHello = function(lis: x) : String {
-  return `the fist is ${lis.One}, and the second is ${lis.Two}, the third is ${lis.Thr = '40'}, and in the end is ${lis.yx || "Last"}`;
-};
-
-const sayWellome = function(show: Btns) : void {
-  console.log(`hello ${show.One}`);
-  console.log(`welcome ${show.Two}`);
-  console.log(`yello ${show.Thr || "UN"}`);
-  
+const compile = function (num1: Number, num2: Number) : result {
+  if (num1 === num2) {
+    return 1;
+  } else if (num1 > num2) {
+    return 0;
+  } else {
+    return -1;
+  }
 }
 
-console.log(sayHello({One: "Mustafa", Two: "Ali", Thr: 'test', yx: +true }));
-sayWellome({One: "Omar", Two: "Noor"})
+// const test1: result = 3;
+// const test2: result = +true;
+const test3: result = 1;
+
+console.log(compile(20, 30));
+console.log(test3);
+
